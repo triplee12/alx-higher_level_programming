@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 def element_at(my_list, idx):
     """Access element at a given index"""
     if idx < 0:
