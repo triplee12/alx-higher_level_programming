@@ -3,11 +3,9 @@
 def new_in_list(my_list, idx, element):
     """Replace an element of a list at a given index without
     modifying the original list"""
-    if idx < 0:
-        return(my_list)
-    elif idx > len(my_list):
-        return(my_list)
+    new_list = my_list[:]
+    if idx < 0 or idx > len(new_list) - 1:
+        return new_list
     else:
-        new_list = my_list[:]
         new_list[idx] = element
-        return(new_list)
+        return new_list
