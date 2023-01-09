@@ -8,14 +8,10 @@ class Square(Rectangle):
 
     Attributes:
         size (int): size must be integer
+
     """
-
     def __init__(self, size):
-        """Initializer of rectangle
-
-        args:
-            size (int): size must be integer
-        """
+        """Initializer"""
         self.integer_validator("size", size)
         self.__size = size
         super().__init__(size, size)
