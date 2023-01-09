@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-"""Square inherits data from Rectangle"""
-Rectangle = __import__("9-rectangle.py").Rectangle
+"""Square module"""
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """Square inherits data from Rectangle
-
+    """Square class
     Attributes:
-        size (int): size must be integer
-
+        size (int): the size of the square
     """
     def __init__(self, size):
         """Initializer"""
