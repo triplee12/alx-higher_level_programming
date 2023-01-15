@@ -33,6 +33,10 @@ class Rectangle(Base):
             w (int): the width
 
         """
+        if type(w) != int:
+            raise TypeError("width must be an integer")
+        if w <= 0:
+            raise ValueError("width must be > 0")
         self.__width = w
 
     @property
@@ -47,6 +51,10 @@ class Rectangle(Base):
             h (int): the height
 
         """
+        if type(h) != int:
+            raise TypeError("height must be an integer")
+        if h <= 0:
+            raise ValueError("height must be > 0")
         self.__height = h
 
     @property
@@ -61,6 +69,10 @@ class Rectangle(Base):
             x_axis (int): the x axis
 
         """
+        if type(x_axis) != int:
+            raise TypeError("x must be an integer")
+        if x_axis < 0:
+            raise ValueError("x must be >= 0")
         self.__x = x_axis
 
     @property
@@ -75,4 +87,8 @@ class Rectangle(Base):
             y_axis (int): the y axis
 
         """
+        if type(y_axis) != int:
+            raise TypeError("y must be an integer")
+        if y_axis < 0:
+            raise ValueError("y must be >= 0")
         self.__y = y_axis
