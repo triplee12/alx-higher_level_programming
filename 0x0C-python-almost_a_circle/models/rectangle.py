@@ -92,3 +92,54 @@ class Rectangle(Base):
         if y_axis < 0:
             raise ValueError("y must be >= 0")
         self.__y = y_axis
+
+    def area(self):
+        """Area of rectangle"""
+
+        return self.__width * self.__height
+
+    def display(self):
+        """Returns printed rectangle with '#'
+        y is newline, x is space
+        """
+
+        if self.__y != 0:
+            for newline in range(self.__y):
+                print()
+
+        for row in range(self.__height):
+            print((self.__x * " ") + (self.__width * '#'))
+
+    def __str__(self):
+        """Returns formatted information display
+        """
+
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.__x, self.__y,
+                                                self.__width, self.__height)
+
+    def update(self, *args, **kwargs):
+        """Updates rectangle values
+        """
+
+        if len(kwargs) != 0:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
+        elif len(args) != 0:
+            try:
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+                self.__x = args[3]
+                self.__y = args[4]
+            except IndexError:
+                pass
+        else:
+            print()
+
+    def to_dictionary(self):
+        """Returns dict representation
+        """
+
+        return {'x': self.__x, 'y': self.__y, 'id': self.id,
+                'height': self.__height, 'width': self.__width}
