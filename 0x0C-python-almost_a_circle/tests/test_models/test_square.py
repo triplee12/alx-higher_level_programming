@@ -30,13 +30,16 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             o3 = Square(-5, 3, 4)
             o4 = Square(9.5, 9.3)
-            o5 = Square(float('inf'))
-            o6 = Square("string")
-            o9 = Square(None)
+            o13 = Square(float('inf'))
+            o14 = Square("string")
+            o15 = Square(None)
 
         with self.assertRaises(TypeError):
+            o5 = Square(float('inf'))
+            o6 = Square("string")
             o7 = Square(5, "hi")
             o8 = Square(5, None)
+            o9 = Square(None)
             o10 = Square(5, float('inf'))
             o11 = Square(5, 9.5)
             o12 = Square()
